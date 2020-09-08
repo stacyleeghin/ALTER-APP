@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import RouteHome from './RouteHome.js';
+import RouteLogin from './RouteLogin.js';
+import RouteSignup from './RouteSignup.js';
+import RouteBrowse from './RouteBrowse.js';
+import RouteDetail from './RouteDetail.js';
+import RouteProfile from './RouteProfile.js';
+import RouteOtherProfile from './RouteOtherProfile.js';
+import RouteOthersprofile from './RouteOthersprofile.js';
+import RouteAdd from './RouteAdd.js';
+import RouteSetting from './RouteSetting.js';
+import RouteCheckout from './RouteCheckout.js';
+import RouteFav from './RouteFav.js';
+import RouteEdit from './RouteEdit.js';
+import { Router, Link, navigate} from '@reach/router';
+// import API from './API'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+
+constructor(props){
+  super(props)
+
+  }
+
+  render (){
+
+    return(
+      <div className="app">
+
+        <Router>
+          <RouteHome path="home" />
+          <RouteLogin path="login" />
+          <RouteSignup path="signup" />
+          <RouteBrowse path="browse" />
+          <RouteDetail path="detail" />
+          <RouteProfile path="profile" />
+          <RouteOthersProfile path="othersprofile" />
+          <RouteAdd path="add"/>
+          <RouteSetting path="setting" />
+          <RouteCheckout path="checkout" />
+          <RouteFav path="fav" />
+          <RouteEdit path="edit" />
+      
+        </Router>
+      </div>
+
+    )
+
+  }
 }
+
 
 export default App;
