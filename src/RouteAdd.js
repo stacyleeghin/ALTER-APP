@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import RouteAdd from './add'
 
-class RouteOthers-Profile extends Component {
+class RouteOthersProfile extends Component {
 
 
 

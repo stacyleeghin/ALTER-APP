@@ -12,4 +12,4 @@ class RouteOthersProfile extends Component {
     }
 }
 
-export default RouteOthers-Profile;
+export default RouteOthersProfile;
