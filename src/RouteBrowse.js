@@ -7,8 +7,8 @@ class RouteBrowse extends Component {
 
     render (){
         return (
-
-        )
+       
+        
     }
 }
 export default RouteBrowse;
