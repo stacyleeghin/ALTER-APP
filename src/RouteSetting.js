@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RouteSetting from './setting'
+
 
 class RouteSetting extends Component {
 

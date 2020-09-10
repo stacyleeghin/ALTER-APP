@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RouteOthersProfile from './others-profile'
+
 
 class RouteOthersProfile extends Component {
 

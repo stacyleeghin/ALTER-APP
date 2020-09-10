@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RouteBrowse from './browse'
+
 // import API from './API'
 
 
@@ -46,7 +46,21 @@ class RouteBrowse extends Component {
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
+                        </div>
+                    </div>
+                    <div className="product">
+                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <div className="pro-title">
+                            <h2>Customized Jacket</h2>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
+                        </div>
+                    </div>
+                    <div className="product">
+                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <div className="pro-title">
+                            <h2>Customized Jacket</h2>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
                     </div>
@@ -54,7 +68,7 @@ class RouteBrowse extends Component {
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
                     </div>
@@ -62,7 +76,7 @@ class RouteBrowse extends Component {
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
                     </div>
@@ -70,23 +84,7 @@ class RouteBrowse extends Component {
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
-
-                        </div>
-                    </div>
-                    <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                        <div className="pro-title">
-                            <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
-
-                        </div>
-                    </div>
-                    <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                        <div className="pro-title">
-                            <h2>Customized Jacket</h2>
-                            <p>John Doe<br><span className="price">$75.00</span></p>
+                            <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
                     </div>
@@ -105,7 +103,7 @@ class RouteBrowse extends Component {
                         <i className="fas fa-user"></i>
                     </div>
                 </div>
-        </div>
+            </div>
         )
     }
 }

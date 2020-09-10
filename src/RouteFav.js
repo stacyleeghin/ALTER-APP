@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import RouteFav from './fav'
+
 
 class RouteFav extends Component {
 
