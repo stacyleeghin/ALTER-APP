@@ -29,7 +29,7 @@ body {
 }
 
 .layer {
-  display: none;
+  /* display: none; */
   min-height: 100vh;
 }
 

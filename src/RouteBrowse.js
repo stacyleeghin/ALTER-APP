@@ -12,7 +12,7 @@ class RouteBrowse extends Component {
                     <img src="assets/logo-black.png" alt="logoimg" className="logoimg"/>
                     <div className="search">
                         <button type="submit"><i className="fa fa-search"></i></button>
-                        <input type="text" className="search-bar" style="font-family:FontAwesome"/>
+                        <input type="text" className="search-bar"/>
                     </div>
                 </div>
                 <div className="category">

@@ -16,14 +16,17 @@ class RouteAdd extends Component {
                     <div className="subtitle">
                         <h1>Add New Listing</h1>
                     </div>
-                    <div className="productimage">
-                        <h3>Product Image</h3>
-                        <label htmlFor="upload_file" className="custom-file-upload"/><i className="fas fa-camera-retro"></i>
-                        <input type="file" name="upload_file" id="upload_file"/>
-                        
-                    </div>
+                    
             
                     <form>
+                        <div className="productimage">
+                            <h3>Product Image</h3>
+                            <label htmlFor="upload_file" className="custom-file-upload">
+                                <i className="fas fa-camera-retro"></i>
+                            </label>
+                            <input type="file" name="upload_file" id="upload_file"/>
+                            
+                        </div>
                         <div className="form-group">
                             <label htmlFor="product">Name</label>
                             <input type="text" className="form-control" id="product" placeholder="Product name"/>
@@ -36,14 +39,13 @@ class RouteAdd extends Component {
             
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
-                            <input type="description" className="form-control" id="exampleInputdescription" placeholder="Enter Description"/>
-                            <textarea name="description" id="description" cols="30" rows="6"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="6" placeholder="Enter Description"></textarea>
                         </div>
             
                         <div className="form-group">
                             <label htmlFor="shipping">Shipping Info</label>
-                            <input type="shipping" className="form-control" id="exampleInputShipping" placeholder="Enter Shipping Info"/>
-                            <textarea name="shipping" id="shipping" cols="30" rows="5"></textarea>
+                            
+                            <textarea name="shipping" id="shipping" cols="30" rows="5" placeholder="Enter shipping info"></textarea>
                         </div>
                         <div className="global-btns">
                             <button type="submit" className="delete-btn">Cancel</button>

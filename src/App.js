@@ -14,9 +14,9 @@ import RouteSetting from './RouteSetting.js';
 import RouteCheckout from './RouteCheckout.js';
 import RouteFav from './RouteFav.js';
 import RouteEdit from './RouteEdit.js';
-import { Router, Link, navigate} from '@reach/router';
 
-import './App.css';
+
+import './style.scss';
 
 class App extends Component{
 
@@ -29,7 +29,7 @@ constructor(props){
 
     return(
       <div className="app">
-
+        
         <Router>
           <RouteHome path="home" />
           <RouteLogin path="login" />
