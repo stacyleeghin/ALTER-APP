@@ -9,8 +9,11 @@ import RouteProfile from './profile'
 
 class RouteBrowse extends Component {
 
-    render (){
-     
-    }
+   
+            
+    
+
+    render ()
+
 }
 export default RouteBrowse;
