@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+// import RouteBrowse from './browse'
+// import RouteFav from './fav'
+// import RouteProfile from './profile'
 
 
 class RouteCheckout extends Component {
@@ -6,6 +9,7 @@ class RouteCheckout extends Component {
 
 
     render(){
+
         return(
             <div className="layer checkout ">
                 <div className="main-header">
@@ -104,6 +108,7 @@ class RouteCheckout extends Component {
 
         </div>
         )
+
     }
 }
 

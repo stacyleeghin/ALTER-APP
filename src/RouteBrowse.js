@@ -1,9 +1,14 @@
 import React, {Component} from 'react'
+// import RouteCheckout from './checkout'
+// import RouteDetail from './detail'
+// import RouteFav from './fav'
+// import RouteProfile from './profile'
 
 // import API from './API'
 
 
 class RouteBrowse extends Component {
+
 
     render (){
         return (
@@ -106,6 +111,7 @@ class RouteBrowse extends Component {
             </div>
         )
     }
+
 }
 
 export default RouteBrowse;

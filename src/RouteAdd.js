@@ -1,5 +1,10 @@
 import React, {Component} from 'react'
 
+// import RouteCheckout from './checkout'
+// import RouteBrowse from './browse'
+// import RouteFav from './fav'
+// import RouteProfile from './profile'
+
 
 class RouteAdd extends Component {
 

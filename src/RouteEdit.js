@@ -1,5 +1,10 @@
 import React, {Component} from 'react'
 
+// import RouteCheckout from './checkout'
+// import RouteBrowse from './browse'
+// import RouteFav from './fav'
+// import RouteProfile from './profile'
+
 
 class RouteEdit extends Component {
 
@@ -7,6 +12,7 @@ class RouteEdit extends Component {
 
     render(){
         return(
+
             <div className="layer edit ">
                 <div className="main-header">
                     <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
@@ -97,6 +103,7 @@ class RouteEdit extends Component {
                     </div>
                 </div>
             </div>
+
         )
     }
 }
