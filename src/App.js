@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import RouteHome from './RouteHome.js';
-import RouteLogin from './RouteLogin.js';
-import RouteSignup from './RouteSignup.js';
-import RouteBrowse from './RouteBrowse.js';
 import RouteDetail from './RouteDetail.js';
 import RouteProfile from './RouteProfile.js';
-import RouteOthersProfile from './RouteOthersProfile.js';
 import RouteAdd from './RouteAdd.js';
-import RouteSetting from './RouteSetting.js';
 import RouteCheckout from './RouteCheckout.js';
 import RouteFav from './RouteFav.js';
-import RouteEdit from './RouteEdit.js';
+import RouteSignup from './RouteSignup.js';
+import RouteSetting from './RouteSetting.js';
+import RouteOthersProfile from './RouteOthersProfile.js';
+import RouteLogin from './RouteLogin.js';
+import RouteEdit from './RouteEdit.js'
+
 import { Router, Link, navigate} from '@reach/router';
 // import API from './API'
 import './App.css';

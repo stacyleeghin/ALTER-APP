@@ -1,5 +1,12 @@
 import React, {Component} from 'react'
+import RouteAdd from './add'
+import RouteEdit from './edit'
+import RouteSetting from './setting'
+import RouteCheckout from './checkout'
+import RouteBrowse from './browse'
+import RouteFav from './fav'
 import RouteProfile from './profile'
+
 
 
 class RouteProfile extends Component {

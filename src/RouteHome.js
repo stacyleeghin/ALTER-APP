@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
+import RouteSignup from './signup'
+import RouteLogin from './login'
 
 // import API from './API'
 
 class RouteHome extends Component {
+
+    constructor(props)
 
 
 

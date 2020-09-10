@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import RouteLogin from './login'
+import RouteBrowse from './browse'
+import RouteHome from './home'
 
 
 

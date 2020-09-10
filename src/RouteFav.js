@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import RouteFav from './fav'
+import RouteCheckout from './checkout'
+import RouteBrowse from './browse'
+import RouteFav from './fav'
+import RouteProfile from './profile'
 
 class RouteFav extends Component {
 
