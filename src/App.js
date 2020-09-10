@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Router, Link, navigate} from '@reach/router'
+import API from './API'
+
 import RouteHome from './RouteHome.js';
 import RouteLogin from './RouteLogin.js';
 import RouteSignup from './RouteSignup.js';
@@ -12,7 +15,7 @@ import RouteCheckout from './RouteCheckout.js';
 import RouteFav from './RouteFav.js';
 import RouteEdit from './RouteEdit.js';
 import { Router, Link, navigate} from '@reach/router';
-// import API from './API'
+
 import './App.css';
 
 class App extends Component{
