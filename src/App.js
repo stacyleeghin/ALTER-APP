@@ -32,7 +32,7 @@ constructor(props){
       <div className="app">
         
         <Router>
-          <RouteHome path="/home" />
+          <RouteHome path="/" />
           <RouteLogin path="/login" />
           <RouteSignup path="/signup" />
           <RouteBrowse path="/browse" />
