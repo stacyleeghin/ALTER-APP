@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteSignup from './signup'
 // import RouteLogin from './login'
 
@@ -18,7 +19,7 @@ class RouteHome extends Component {
                 <p>Buy and sell customised one-off apparel. The app for creative trend setters </p>
                 <div className="buttons">
                     <a href="#" className="signup-btn">Create Account</a>
-                    <a href="#" className="login-btn">Log In</a>
+                    <Link to="/login"><a href="#" className="login-btn">Log In</a></Link>
                 </div>
             </div>
         )

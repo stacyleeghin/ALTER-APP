@@ -32,18 +32,18 @@ constructor(props){
       <div className="app">
         
         <Router>
-          <RouteHome path="home" />
-          <RouteLogin path="login" />
-          <RouteSignup path="signup" />
-          <RouteBrowse path="browse" />
-          <RouteDetail path="detail" />
-          <RouteProfile path="profile" />
-          <RouteOthersProfile path="othersprofile" />
-          <RouteAdd path="add"/>
-          <RouteSetting path="setting" />
-          <RouteCheckout path="checkout" />
-          <RouteFav path="fav" />
-          <RouteEdit path="edit" />
+          <RouteHome path="/home" />
+          <RouteLogin path="/login" />
+          <RouteSignup path="/signup" />
+          <RouteBrowse path="/browse" />
+          <RouteDetail path="/detail" />
+          <RouteProfile path="/profile" />
+          <RouteOthersProfile path="/othersprofile" />
+          <RouteAdd path="/add"/>
+          <RouteSetting path="/setting" />
+          <RouteCheckout path="/checkout" />
+          <RouteFav path="/fav" />
+          <RouteEdit path="/edit" />
       
         </Router>
       </div>
