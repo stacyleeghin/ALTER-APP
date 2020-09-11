@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteDetail from './detail'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
@@ -88,19 +89,19 @@ class RouteOthersProfile extends Component {
                 </div>
             </div>
             <div className="main-footer">
-                <div className="nav home ">
-                    <i className="fas fa-home"></i>
+                    <div className="nav home">
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
+                    </div>
+                    <div className="nav cart">
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
+                    </div>
+                    <div className="nav fav">
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
+                    </div>
+                    <div className="nav profile">
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
+                    </div>
                 </div>
-                <div className="nav cart">
-                    <i className="fas fa-shopping-cart"></i>
-                </div>
-                <div className="nav fav">
-                    <i className="fas fa-heart"></i>
-                </div>
-                <div className="nav profile nav-on">
-                    <i className="fas fa-user"></i>
-                </div>
-            </div>
         </div>
 
         )

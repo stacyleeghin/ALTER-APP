@@ -5,7 +5,7 @@ import { Link } from '@reach/router'
 // import RouteFav from './fav'
 // import RouteProfile from './profile'
 
-class RouteDetail extends Component {
+class RouteBrowseDetail extends Component {
 
 
 
@@ -13,7 +13,7 @@ class RouteDetail extends Component {
         return(
             <div className="layer detail">
                 <div className="main-header">
-                    <div className="headerback"><Link to="/profile"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
+                    <div className="headerback"><Link to="/browse"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
                     <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
@@ -21,7 +21,7 @@ class RouteDetail extends Component {
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
-                        <Link to ="/edit"><i class="fas fa-edit"></i></Link>
+                        <Link to ="/checkout"><i class="fas fa-cart-plus"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
                         <h3 className="item-detail-title">Customised Jacket Title</h3>
@@ -106,7 +106,7 @@ class RouteDetail extends Component {
                                     </button>
                                 </div>
                             </div>
-                            {/* <div className="review-container">
+                            <div className="review-container">
                                 <div className="review-user-info-container">
                                     <div className="review-user-dp">
                                         <img src="/assets/user1.jpeg" alt="user"/>
@@ -131,7 +131,7 @@ class RouteDetail extends Component {
                                 <div className="review-comment">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus mauris, sollicitudin sed sodales eu, vehicula eu nibh. Sed ut lectus nulla. Sed fringilla iaculis ante vel viverra. Nulla semper mauris ut lorem molestie, sit amet faucibus augue congue.
                                 </div>
-                            </div> */}
+                            </div>
 
                         </div>
                     </div>
@@ -155,4 +155,4 @@ class RouteDetail extends Component {
     }
 }
 
-export default RouteDetail;
+export default RouteBrowseDetail;

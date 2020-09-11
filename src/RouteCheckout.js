@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
 // import RouteProfile from './profile'
@@ -13,7 +14,7 @@ class RouteCheckout extends Component {
         return(
             <div className="layer checkout ">
                 <div className="main-header">
-                    <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+                <div className="headerback"><Link to="/browse"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
                     <img src="assets/logo-black.png" alt="logoimg" className="headerlogo"/>
                 </div>
             
@@ -24,7 +25,7 @@ class RouteCheckout extends Component {
                     <div className="cart-item item-one">
                         <div className="cartsec1">
                             <div className="cartpic">
-                                <img src="assets/jacket.jpg" alt="jacket"/>
+                                <img src="assets/jacket14.jpg" alt="jacket"/>
                             </div>
                             <div className="cartdes">
                                 <h3>Customized Jacket Title</h3>
@@ -42,7 +43,7 @@ class RouteCheckout extends Component {
                     <div className="cart-item item-one ">
                         <div className="cartsec1">
                             <div className="cartpic">
-                                <img src="assets/jacket.jpg" alt="jacket"/>
+                                <img src="assets/jacket2.jpg" alt="jacket"/>
                             </div>
                             <div className="cartdes">
                                 <h3>Customized Jacket Title</h3>
@@ -59,7 +60,7 @@ class RouteCheckout extends Component {
                     <div className="cart-item item-one ">
                         <div className="cartsec1">
                             <div className="cartpic">
-                                <img src="assets/jacket.jpg" alt="jacket"/>
+                                <img src="assets/jacket13.jpg" alt="jacket"/>
                             </div>
                             <div className="cartdes">
                                 <h3>Customized Jacket Title</h3>
@@ -92,21 +93,22 @@ class RouteCheckout extends Component {
         
 
                 <div className="main-footer">
-                <div className="nav home nav-on">
-                    <i className="fas fa-home"></i>
+                    <div className="nav home">
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
+                    </div>
+                    <div className="nav cart nav-on">
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
+                    </div>
+                    <div className="nav fav">
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
+                    </div>
+                    <div className="nav profile">
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
+                    </div>
                 </div>
-                <div className="nav cart">
-                    <i className="fas fa-shopping-cart"></i>
-                </div>
-                <div className="nav fav">
-                    <i className="fas fa-heart"></i>
-                </div>
-                <div className="nav profile">
-                    <i className="fas fa-user"></i>
-                </div>
-                </div>
+            </div>
 
-        </div>
+        
         )
 
     }

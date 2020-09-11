@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteBrowse from './browse'
 // import RouteHome from './home'
 
@@ -13,7 +14,7 @@ class RouteLogin extends Component {
         return(
             <div className="layer login">
             <div className="header">
-                <div className="backicon"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+                <div className="backicon"><Link to="/"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
                 <img src="assets/logo-white.png" alt="logoimg" className="logoimg"/>
             </div>
             <img src="assets/jacket.png" alt="loginimg" className="loginimg"/>
@@ -27,7 +28,7 @@ class RouteLogin extends Component {
                     <div className="pure-control-group">
                         <input id="password" type="password" name="password" placeholder="Password"/>
                     </div>
-                    <button type="submit" className="login-button">Log In</button>
+                    <Link to="/browse"><button type="submit" className="login-button">Log In</button></Link>
                 </form>
             </div>
         </div>

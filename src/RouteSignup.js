@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 
 // import API from './API'
 
@@ -13,8 +14,8 @@ class RouteSignup extends Component {
 
             <div className="layer signup ">
             <div className="header">
-                <div className="backicon"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
-                <img src="assets/logo-black.png" alt="logoimg" className="logoimg"/>
+                <div className="backicon"><Link to="/"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
+                <img src="assets/logo-white.png" alt="logoimg" className="logoimg"/>
             </div>
             
             <div className="signin-container">
@@ -33,7 +34,7 @@ class RouteSignup extends Component {
                     <div className="pure-control-group">
                         <input id="confirm-password" type="password" name="password" placeholder="Confirm Password"/>
                     </div>
-                    <button type="submit" className="login-button">Create Account</button>
+                    <Link to="/login"><button type="submit" className="login-button">Create Account</button></Link>
                 </form>
             </div>
         </div>

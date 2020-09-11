@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteAdd from './add'
 // import RouteEdit from './edit'
 // import RouteSetting from './setting'
@@ -17,9 +18,9 @@ class RouteProfile extends Component {
             <div className="layer profile ">
                 <div className="shape angle"></div>
                 <div className="main-header">
-                    <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+                
                     <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
-                    <i className="fas fa-cog"></i>
+                    <Link to = "/setting"><i className="fas fa-cog"></i></Link>
                 </div>
                 <div className="profilehead">
                     <img src="assets/profile.jpeg" alt="profileimg" className="profileimg"/>
@@ -36,73 +37,68 @@ class RouteProfile extends Component {
                 </div>
                 <div className="addproduct">
                     <h1>My Products</h1>
-                    <div className="addbtn">
+                    <Link to="/add"><div className="addbtn">
                         <p>Add Product </p><i className="fas fa-plus-circle"></i>
-                    </div>
+                    </div></Link>
                     
                 </div>
                 <div className="browse-container">
+                    
                     <div className="product">
+                        <Link to ="/detail">
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
+                    
                     <div className="product">
+                        <Link to ="/detail">
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
+                         <Link to ="/detail">
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
+                        <Link to ="/detail">
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
-                    <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                        <div className="pro-title">
-                            <h2>Customized Jacket</h2>
-                            <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                        </div>
-                    </div>
-                    <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                        <div className="pro-title">
-                            <h2>Customized Jacket</h2>
-                            <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                        </div>
-                    </div>
+                    
                 </div>
                 <div className="main-footer">
-                    <div className="nav home ">
-                        <i className="fas fa-home"></i>
+                    <div className="nav home">
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
                     </div>
                     <div className="nav cart">
-                        <i className="fas fa-shopping-cart"></i>
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
                     </div>
                     <div className="nav fav">
-                        <i className="fas fa-heart"></i>
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
                     </div>
                     <div className="nav profile nav-on">
-                        <i className="fas fa-user"></i>
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
                     </div>
                 </div>
             </div>

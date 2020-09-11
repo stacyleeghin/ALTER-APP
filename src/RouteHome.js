@@ -18,7 +18,7 @@ class RouteHome extends Component {
                 
                 <p>Buy and sell customised one-off apparel. The app for creative trend setters </p>
                 <div className="buttons">
-                    <a href="#" className="signup-btn">Create Account</a>
+                    <Link to="/signup"><a href="#" className="signup-btn">Create Account</a></Link>
                     <Link to="/login"><a href="#" className="login-btn">Log In</a></Link>
                 </div>
             </div>

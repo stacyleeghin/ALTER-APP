@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { Link } from '@reach/router'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
@@ -15,16 +15,14 @@ class RouteEdit extends Component {
 
             <div className="layer edit ">
                 <div className="main-header">
-                    <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+                <div className="headerback"><Link to="/detail"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
                     <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
                     <img src="assets/jacket.jpg" alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
-                    <button className="edit-btn">
-                        <i className="fas fa-edit"></i>
-                    </button>
+                    
                     <div className="item-detail-header-container">
                         <h3 className="item-detail-title">New Item</h3>
                         <p className="item-detail-price">$00.00</p>
@@ -80,26 +78,26 @@ class RouteEdit extends Component {
                         </textarea>
                     </div>
                     <div className="edit-btn-container">
-                        <button className="delete-btn">
+                        <Link to="/profile"><button className="delete-btn">
                             Delete Product
-                        </button>
-                        <button className="save-btn">
+                        </button></Link>
+                        <Link to="/profile"> <button className="save-btn">
                             Save
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
                 <div className="main-footer">
-                    <div className="nav home nav-on">
-                        <i className="fas fa-home"></i>
+                    <div className="nav home">
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
                     </div>
                     <div className="nav cart">
-                        <i className="fas fa-shopping-cart"></i>
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
                     </div>
                     <div className="nav fav">
-                        <i className="fas fa-heart"></i>
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
                     </div>
                     <div className="nav profile">
-                        <i className="fas fa-user"></i>
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
                     </div>
                 </div>
             </div>

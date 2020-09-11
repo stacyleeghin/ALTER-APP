@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteCheckout from './checkout'
 // import RouteDetail from './detail'
 // import RouteFav from './fav'
@@ -48,64 +49,75 @@ class RouteBrowse extends Component {
                 </div>
                 <div className="browse-container">
                     <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <Link to="/browse-detail">
+                        <img src="assets/jacket11.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <Link to="/browse-detail">
+                        <img src="assets/jacket12.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <Link to="/browse-detail">
+                        <img src="assets/jacket13.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <Link to="/browse-detail">
+                        <img src="assets/jacket14.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <Link to="/browse-detail">
+                        <img src="assets/jacket2.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
 
                         </div>
+                        </Link>
                     </div>
                     <div className="product">
+                        <Link to="/browse-detail">
                         <img src="assets/jacket.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
-
                         </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="main-footer">
                     <div className="nav home nav-on">
-                        <i className="fas fa-home"></i>
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
                     </div>
                     <div className="nav cart">
-                        <i className="fas fa-shopping-cart"></i>
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
                     </div>
                     <div className="nav fav">
-                        <i className="fas fa-heart"></i>
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
                     </div>
                     <div className="nav profile">
-                        <i className="fas fa-user"></i>
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
                     </div>
                 </div>
             </div>

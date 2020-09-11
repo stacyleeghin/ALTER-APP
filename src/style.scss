@@ -103,6 +103,7 @@ h6{
         padding: 0.5em;
         h2{
             font-size: 1em;
+            color: $main-black-color;
         }
         p{
             color: $main-gray-color;
@@ -131,8 +132,8 @@ h6{
     width:100%;
     .nav-on{
         background: $main-black-color !important;
-        i{
-            color: $main-white-color;
+        a{
+            color: $main-white-color !important;
         }
     }
     .nav{
@@ -142,13 +143,14 @@ h6{
         flex-grow: 1;
         
         background: $main-white-color;
-        i{
+        a{
             display: flex;
             align-items: center;
             text-align: center;
             position:relative;
             top: calc(50% - 10px);
             justify-content: center;
+            color: $main-black-color;
         }
     }
 }
@@ -170,7 +172,10 @@ h6{
         top: 0.5em;
        left: 0.5em;
         position: absolute;
-        color:$main-black-color;
+        a{
+            color:$main-black-color;    
+        }
+        
     }
     
 }
@@ -253,11 +258,14 @@ h6{
             width: 35%;    
         }
         .backicon{
+            a{
+                color:$main-white-color;
+            }
             font-size: 1.8em;
            top: 1em;
            left: 0.5em;
             position: absolute;
-            color:$main-white-color;
+            
         }
         
     }
@@ -319,11 +327,14 @@ h6{
             width: 35%;    
         }
         .backicon{
+            a{
+                color:$main-black-color;
+            }
             font-size: 1.8em;
            top: 1em;
            left: 0.5em;
             position: absolute;
-            color:$main-black-color;
+            
         }
         
     }
@@ -804,6 +815,9 @@ h6{
             z-index: 10;
             outline: none;
         }
+        input{
+            outline: none;
+        }
         .custom-file-upload {
             // display: inline-block;
             cursor: pointer;
@@ -862,11 +876,17 @@ h6{
             border-radius: 3px 9px 9px 15px;
         }
         .delete-btn{
-            color: $main-black-color;
+            a{
+                color: $main-black-color;
+            }
+            
             background-color: $main-white-color;
         }
         .save-btn{
-            color: $main-white-color;
+            a{
+                color: $main-white-color;
+            }
+            
             background-color: $main-black-color;
         }
     }
@@ -881,7 +901,9 @@ h6{
         z-index: 99999;
         background-color: transparent;
         .headerback{
-            color: $main-white-color;
+            a{
+                color: $main-white-color;
+            }
         }
     }
     .item-detail-img-container{
@@ -915,6 +937,9 @@ h6{
         flex-wrap: wrap;
         position: relative;
         .addtocart-btn{
+            a{
+                color:$main-dark-color;
+            }
             background-color: $main-white-color;
             padding: 0.5em;
             text-align: center;
@@ -923,7 +948,7 @@ h6{
             font-size: 1.5em;
             top: -1.6em;
             right: 1.5em;
-            color:$main-dark-color;
+            
             border-radius: 50%;
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
             outline: none;

@@ -17,6 +17,7 @@ import RouteSignup from './RouteSignup.js';
 import RouteSetting from './RouteSetting.js';
 import RouteOthersProfile from './RouteOthersProfile.js';
 import RouteLogin from './RouteLogin.js';
+import RouteBrowseDetail from './RouteBrowseDetail';
 
 
 class App extends Component{
@@ -32,10 +33,11 @@ constructor(props){
       <div className="app">
         
         <Router>
-          <RouteHome path="/home" />
+          <RouteHome path="/" />
           <RouteLogin path="/login" />
           <RouteSignup path="/signup" />
           <RouteBrowse path="/browse" />
+          <RouteBrowseDetail path="/browse-detail" />
           <RouteDetail path="/detail" />
           <RouteProfile path="/profile" />
           <RouteOthersProfile path="/othersprofile" />

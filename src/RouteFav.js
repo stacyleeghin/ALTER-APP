@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from '@reach/router'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteProfile from './profile'
@@ -12,7 +13,7 @@ class RouteFav extends Component {
         return(
             <div className="layer fav">
             <div className="main-header">
-                <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+            <div className="headerback"><Link to="/browse"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
                 <img src="assets/logo-black.png" alt="logoimg" className="headerlogo"/>
             </div>
             <div className="fav-container">
@@ -20,7 +21,7 @@ class RouteFav extends Component {
                 <div className="browse-container">
                     <div className="product">
                         <i className="fas fa-heart"></i>
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <img src="assets/jacket11.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
@@ -29,7 +30,7 @@ class RouteFav extends Component {
                     </div>
                     <div className="product">
                         <i className="fas fa-heart"></i>
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <img src="assets/jacket12.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
@@ -38,7 +39,7 @@ class RouteFav extends Component {
                     </div>
                     <div className="product">
                         <i className="fas fa-heart"></i>
-                        <img src="assets/jacket.jpg" alt="product" className="product-img"/>
+                        <img src="assets/jacket2.jpg" alt="product" className="product-img"/>
                         <div className="pro-title">
                             <h2>Customized Jacket</h2>
                             <p>John Doe<br/><span className="price">$75.00</span></p>
@@ -48,19 +49,19 @@ class RouteFav extends Component {
                 </div>
             </div>
             <div className="main-footer">
-                <div className="nav home">
-                    <i className="fas fa-home"></i>
+                    <div className="nav home">
+                        <Link to="/browse"><i className="fas fa-home"></i></Link>
+                    </div>
+                    <div className="nav cart">
+                        <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
+                    </div>
+                    <div className="nav fav nav-on">
+                        <Link to="/fav"><i className="fas fa-heart"></i></Link>
+                    </div>
+                    <div className="nav profile">
+                        <Link to="/profile"><i className="fas fa-user"></i></Link>
+                    </div>
                 </div>
-                <div className="nav cart">
-                    <i className="fas fa-shopping-cart"></i>
-                </div>
-                <div className="nav fav nav-on">
-                    <i className="fas fa-heart"></i>
-                </div>
-                <div className="nav profile">
-                    <i className="fas fa-user"></i>
-                </div>
-            </div>
         </div>
         )
     }
