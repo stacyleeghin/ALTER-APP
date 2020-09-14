@@ -75,7 +75,7 @@ class RouteProfile extends Component {
                     <div className="addproduct">
                         <h1>My Products</h1>
                         <div className="addbtn">
-                            <p>Add Product </p><i className="fas fa-plus-circle"></i>
+                            <Link to="/add"><p>Add Product </p><i className="fas fa-plus-circle"></i></Link>
                         </div>
                         
                     </div>
@@ -144,19 +144,19 @@ class RouteProfile extends Component {
                         </div>
                     </div> */}
                     <div className="main-footer">
-                        <div className="nav home ">
-                            <i className="fas fa-home"></i>
+                        <div className="nav home">
+                            <Link to="/browse"><i className="fas fa-home"></i></Link>
                         </div>
                         <div className="nav cart">
-                            <i className="fas fa-shopping-cart"></i>
+                            <Link to="/checkout"><i className="fas fa-shopping-cart"></i></Link>
                         </div>
                         <div className="nav fav">
-                            <i className="fas fa-heart"></i>
+                            <Link to="/fav"><i className="fas fa-heart"></i></Link>
                         </div>
                         <div className="nav profile nav-on">
-                            <i className="fas fa-user"></i>
+                            <Link to="/profile"><i className="fas fa-user"></i></Link>
                         </div>
-                    </div>
+                </div>
                 </div>
                 
         )

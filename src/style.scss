@@ -576,14 +576,17 @@ h6{
         align-items: center;
         .addbtn{
             
-            color: $main-gray-color;
-            align-items: center;
-            display: flex;
+            
             
             i{
                 color: $main-black-color;
                 font-size: 1.5em;
                 padding-left: 0.2em;
+            }
+            a{
+                color: $main-black-color;
+                display: flex;
+                align-items: center;
             }
         }
     }
