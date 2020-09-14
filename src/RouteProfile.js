@@ -18,32 +18,42 @@ class RouteProfile extends Component {
         this.state = {
 
             ClothingItems:[
-                {
+                // {
 
-                    id:1,
-                    name:'Custom Jacket',
-                    description:'Hand painted demin jacket',
-                    // photo url:
-                    price: 79,
-                    typeId:1,
-                    userId:1,
+                //     id:1,
+                //     name:{this.name},
+                //     description:'Hand painted demin jacket',
+                //     // photo url:
+                //     price: 79.00,
+                //     typeId:1,
+                //     userId:1,
 
-                },{
+                // },{
 
-                    id:2,
-                    name:'Custom Pants',
-                    description:'Hand painted demin jeans',
-                    // photo url:
-                    price: 59,
-                    typeId:2,
-                    userId:2,
-                }
+                //     id:2,
+                //     name:'Custom Pants',
+                //     description:'Hand painted demin jeans',
+                //     // photo url:
+                //     price: 59.00,
+                //     typeId:2,
+                //     userId:2,
+                // },{
+
+                //     id:3,
+                //     name:'Custom Pants',
+                //     description:'Hand painted demin jeans',
+                //     // photo url:
+                //     price: 59.00,
+                //     typeId:2,
+                //     userId:2,
+                // }
             ]
         }
     }
+
     loadProfile = () => {
         API.getClothing().then(res => {
-        this.setState({Profile:res.data})
+        this.setState({ClothingItems:res.data})
         })
     }
     componentDidMount(){
@@ -81,68 +91,16 @@ class RouteProfile extends Component {
                     </div>
                     <div className="browse-container">
                         {
-                           this.state.ClothingItems.map((product) => {
-                                
+                            this.state.ClothingItems.map((product) => {
                                 var productProps = {
                                     ...product,
                                     key: product.id,
                                     loadProfile:this.loadProfile
                                 };
                                 return (<Product {...productProps} />)
-                               
-                           })
+                            })
                         }
                     </div>
-
-                        {/* <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                    </div> */}
                     <div className="main-footer">
                         <div className="nav home">
                             <Link to="/browse"><i className="fas fa-home"></i></Link>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
+import API from './API';
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
@@ -8,7 +9,23 @@ import { Link } from '@reach/router'
 
 class RouteAdd extends Component {
 
+    submitForm = (e) => {
+        e.preventDefault()
+        var formData = new FormData(this.form);
 
+        var data = {
+            name:formData.get('product'),
+            // placeholder photourl before image uploader completed
+            photoUrl:'https://lh3.googleusercontent.com/DEkMFpkyPAiO8JKmx0D-fttmQXWMRAi72qnZHOb2WvcmyIxwajfdkKy6qJt3y7Y9I5GyeW7gUR4Yr67qIgTZ1bXyNiKaoJlUKen0OV9g91mii59R5Y12BngghHPravSxNCeYgZeu=w2400',
+            description:formData.get('description'),
+            shippingInfo:formData.get('shipping'),
+            price:formData.get('inputPrice'),
+            userId:1,
+            typeId:2
+        }
+
+        API.addClothing(data).then(res => navigate('/profile'))
+    }
 
     render(){
         return(
@@ -21,9 +38,8 @@ class RouteAdd extends Component {
                     <div className="subtitle">
                         <h1>Add New Listing</h1>
                     </div>
-                    
             
-                    <form>
+                    <form onSubmit={this.submitForm} ref={(el) => {this.form = el}}>
                         <div className="productimage">
                             <h3>Product Image</h3>
                             <label htmlFor="upload_file" className="custom-file-upload">
@@ -34,27 +50,26 @@ class RouteAdd extends Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="product">Name</label>
-                            <input type="text" className="form-control" id="product" placeholder="Product name"/>
-            
+                            <input type="text" className="form-control" id="product" name="product" placeholder="Product name" required/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPrice">Price</label>
-                            <input type="text" className="form-control" id="exampleInputPrice" placeholder="$00.00"/>
+                            <label htmlFor="inputPrice">Price</label>
+                            <input type="text" className="form-control" name="inputPrice" id="inputPrice" placeholder="$00.00" required/>
                         </div>
             
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
-                            <textarea name="description" id="description" cols="30" rows="6" placeholder="Enter Description"></textarea>
+                            <textarea name="description" id="description" cols="30" rows="6" placeholder="Enter Description" required></textarea>
                         </div>
             
                         <div className="form-group">
                             <label htmlFor="shipping">Shipping Info</label>
                             
-                            <textarea name="shipping" id="shipping" cols="30" rows="5" placeholder="Enter shipping info"></textarea>
+                            <textarea name="shipping" id="shipping" cols="30" rows="5" placeholder="Enter shipping info" required></textarea>
                         </div>
                         <div className="global-btns">
-                            <button type="submit" className="delete-btn"><Link to="/profile">Cancel</Link></button>
-                            <button type="submit" className="save-btn"><Link to="/profile">Add</Link></button>
+                            <button className="delete-btn"><Link to="/profile">Cancel</Link></button>
+                            <button type="submit" className="save-btn">Add</button>
                         </div>
                     </form>
                 </div>
