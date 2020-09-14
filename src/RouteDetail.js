@@ -21,7 +21,7 @@ class RouteDetail extends Component {
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
-                        <Link to ="/edit"><i class="fas fa-edit"></i></Link>
+                        <Link to={"/edit/" + this.props.id}><i class="fas fa-edit"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
                         <h3 className="item-detail-title">Customised Jacket Title</h3>

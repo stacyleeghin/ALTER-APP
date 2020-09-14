@@ -18,32 +18,32 @@ class RouteProfile extends Component {
         this.state = {
 
             ClothingItems:[
-                {
+                // {
 
-                    id:1,
-                    name:'Custom Jacket',
-                    description:'Hand painted demin jacket',
-                    // photo url:
-                    price: 79,
-                    typeId:1,
-                    userId:1,
+                //     id:1,
+                //     name:'Custom Jacket',
+                //     description:'Hand painted demin jacket',
+                //     // photo url:
+                //     price: 79,
+                //     typeId:1,
+                //     userId:1,
 
-                },{
+                // },{
 
-                    id:2,
-                    name:'Custom Pants',
-                    description:'Hand painted demin jeans',
-                    // photo url:
-                    price: 59,
-                    typeId:2,
-                    userId:2,
-                }
+                //     id:2,
+                //     name:'Custom Pants',
+                //     description:'Hand painted demin jeans',
+                //     // photo url:
+                //     price: 59,
+                //     typeId:2,
+                //     userId:2,
+                // }
             ]
         }
     }
     loadProfile = () => {
         API.getClothing().then(res => {
-        this.setState({Profile:res.data})
+            this.setState({ClothingItems:res.data})
         })
     }
     componentDidMount(){
