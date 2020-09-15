@@ -1037,6 +1037,7 @@ h6{
         }
     }
     .item-desc-container, .item-ship-container{
+        flex: 0 0 100%;
         padding-bottom:1em;
         .item-desc-title, .item-ship-title{
             font-weight: 400;
@@ -1160,6 +1161,9 @@ h6{
         background-color: transparent;
         .headerback{
             color: $main-white-color;
+            a{
+                color: $main-white-color;
+            }
         }
     }
     .item-detail-img-container{

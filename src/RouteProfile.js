@@ -3,14 +3,6 @@ import API from './API'
 import {Link} from '@reach/router'
 import Product from './Product'
 
-// import RouteEdit from './edit'
-// import RouteSetting from './setting'
-// import RouteCheckout from './checkout'
-// import RouteBrowse from './browse'
-// import RouteFav from './fav'
-
-
-
 class RouteProfile extends Component {
 
     constructor(props){
@@ -66,11 +58,11 @@ class RouteProfile extends Component {
                     <div className="shape angle"></div>
                     <div className="main-header">
                         <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
-                        <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                        <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                         <i className="fas fa-cog"></i>
                     </div>
                     <div className="profilehead">
-                        <img src="assets/profile.jpeg" alt="profileimg" className="profileimg"/>
+                        <img src="/assets/profile.jpeg" alt="profileimg" className="profileimg"/>
                         <div className="profiledp">
                             <h3>John Doe<span className="profile-edit"><i className="fas fa-pen"></i></span></h3>
                             <p><i className="fas fa-map-marker-alt"></i> Toronto,Canada</p> 

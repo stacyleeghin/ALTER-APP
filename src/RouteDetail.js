@@ -1,34 +1,42 @@
 import React, {Component} from 'react'
 import { Link } from '@reach/router'
-// import RouteCheckout from './checkout'
-// import RouteBrowse from './browse'
-// import RouteFav from './fav'
-// import RouteProfile from './profile'
+import API from './API'
 
 class RouteDetail extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            productDetail:null
+        }
+    }
+
+    componentDidMount(){
+        var {id} = this.props
+        API.getSingleClothing(id).then(res=>{
+            this.setState({productDetail:res.data})
+        })
+    }
+
     render(){
+        var {productDetail} = this.state
 
-        var {id,name,description,shippingInfo, price,typeId,userId, user, type} = this.props
-
-        
-
-        return(
+        return productDetail ? (
             <div className="layer detail">
                 <div className="main-header">
                     <div className="headerback"><Link to="/profile"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                    <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="assets/jacket.jpg" alt="product"/>
+                    <img src={productDetail.photoUrl}alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
                         <Link to ={"/edit/" + this.props.id}><i className="fas fa-edit"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
-                        <h3 className="item-detail-title">{name}</h3>
-                        <p className="item-detail-price">$75.00</p>
+                        <h3 className="item-detail-title">{productDetail.name}</h3>
+                        <p className="item-detail-price">${productDetail.price.$numberDecimal}</p>
                     </div>
                     <div className="item-detail-subhead-container">
                         <div className="review-star-container">
@@ -43,11 +51,11 @@ class RouteDetail extends Component {
                     </div>
                     <div className="item-user-container">
                         <div className="item-user-dp">
-                            <img src="/assets/user1.jpeg" alt="user"/>
+                            <img src={productDetail.user.dpUrl} alt="user"/>
                         </div>
                         <div className="item-user-info-container">
-                            <p className="item-user item-user-name">Ruel Vincent</p>
-                            <p className="item-user item-user-address">Auckland, New Zealand</p>
+                            <p className="item-user item-user-name">{productDetail.user.name}</p>
+                            <p className="item-user item-user-address">{productDetail.user.location}</p>
                         </div>
                     </div>
                     <div className="item-desc-container">
@@ -55,7 +63,7 @@ class RouteDetail extends Component {
                             Description
                         </p>
                         <p className="item-desc">
-                            Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
+                            {productDetail.description}
                         </p>
                     </div>
                     <div className="item-ship-container">
@@ -63,7 +71,7 @@ class RouteDetail extends Component {
                             Shipping Info
                         </p>
                         <p className="item-ship">
-                            Shipping to New Zealand only. $15 for country wide express shipping.
+                            {productDetail.shippingInfo}
                         </p>
                     </div>
                     <div className="item-review-container">
@@ -128,7 +136,7 @@ class RouteDetail extends Component {
                     </div>
                 </div>
         </div>
-        )
+        ):null
     }
 }
 
