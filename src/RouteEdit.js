@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
+import API from './API'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
@@ -8,83 +9,113 @@ import { Link } from '@reach/router'
 
 class RouteEdit extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            ClothingItem:{
+                description:'',
+                name:'',
+                price:'',
+                shippingInfo:'',
+                photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+                userId:'',
+                typeId:''
+            }
+        }
+    }
+    componentDidMount(){
+        var {id} = this.props;
+        API.getSingleClothing(id).then(res =>{
+            this.setState({ClothingItem:res.data})
+        })
+    }
 
+    handleFormSubmit = (e) => {
+        e.preventDefault()
+        var formData = new FormData(this.form)
+        var data = {
+            photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+            name:formData.get('name-input'),
+            description:formData.get('description-input'),
+            price:formData.get('price-input'),
+            shippingInfo:formData.get('shipping-input'),
+            userId:1,
+            typeId:1
+        }
+        var {id} = this.props;
+        API.updateClothing(id,data).then(res => navigate('/profile'))
+    }
+
+ 
 
     render(){
+
+        var {name,description,price,shippingInfo,photoUrl,userId}= this.state.ClothingItem
         return(
 
             <div className="layer edit ">
                 <div className="main-header">
-                <div className="headerback"><Link to="/detail"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                <div className="headerback"><Link to={"/detail/" + this.props.id}><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
+                    <img src="" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="assets/jacket.jpg" alt="product"/>
+                    <img src={photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     
-                    <div className="item-detail-header-container">
-                        <h3 className="item-detail-title">New Item</h3>
-                        <p className="item-detail-price">$00.00</p>
-                    </div>
+                    
                     <div className="item-detail-subhead-container">
                     </div>
                     <div className="item-user-container">
                         <div className="item-user-dp">
-                            <img src="/assets/user1.jpeg" alt="user"/>
+                            <img src="/assets/user1.jpeg" alt="user" />
                         </div>
                         <div className="item-user-info-container">
                             <p className="item-user item-user-name">Ruel Vincent</p>
                             <p className="item-user item-user-address">Auckland, New Zealand</p>
                         </div>
                     </div>
+                    <form onSubmit={this.handleFormSubmit} ref={(el)=>{this.form = el}}>
                     <div className="item-input-container">
                         <p className="item-input-title">
                             Name
                         </p>
-                        <p className="item-desc hide">
-                            Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
-                        </p>
-                        <input type="text" name="name" id="name-input" className="edit-input" placeholder="Denim jacket finished"/>
+                    
+                        <input type="text" name="name-input" id="name-input" className="edit-input" defaultValue={name}/>
                         
                     </div>
                     <div className="item-input-container">
                         <p className="item-input-title">
                             Price
                         </p>
-                        <p className="item-desc hide">
-                            Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
-                        </p>
-                        <input type="text" name="price" id="price-input" className="edit-input" placeholder="70.00"/>
+                        
+                        <input type="text" name="price-input" id="price-input" className="edit-input" defaultValue={price.$numberDecimal}/>
                     </div>
                     <div className="item-input-container">
                         <p className="item-input-title">
                             Description
                         </p>
-                        <p className="item-desc hide">
-                            Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
-                        </p>
-                        <textarea name="name" id="name" className="edit-input">
+                        
+                        <textarea name="description-input" id="description-input" className="description-input" defaultValue={description}>
                         </textarea>
                     </div>
                     <div className="item-input-container">
                         <p className="item-input-title">
                             Shipping Info
                         </p>
-                        <p className="item-ship hide">
-                            Shipping to New Zealand only. $15 for country wide express shipping.
-                        </p>
-                        <textarea name="name" id="name" className="edit-input">
+                        
+                        <textarea name="shipping-input" id="shipping-input" className="shipping-input" defaultValue={shippingInfo}>
                         </textarea>
                     </div>
                     <div className="edit-btn-container">
-                        <Link to="/profile"><button className="delete-btn">
-                            Delete Product
-                        </button></Link>
-                        <Link to="/profile"> <button className="save-btn">
+                        <button className="delete-btn">
+                            cancle
+                        </button>
+                        <button className="save-btn">
                             Save
-                        </button></Link>
+                        </button>
                     </div>
+                    </form>
                 </div>
                 <div className="main-footer">
                     <div className="nav home">

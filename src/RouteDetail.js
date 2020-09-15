@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from '@reach/router'
+import API from './API'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
@@ -7,25 +8,58 @@ import { Link } from '@reach/router'
 
 class RouteDetail extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {
+            clothingItem:{
+                description:'',
+                name:'',
+                price:'',
+                shippingInfo:'',
+                photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+                userId:'',
+                typeId:''
 
+            }
+        }
+    }
+
+    handleDelete= () => {
+        var {id} = this.props
+        API.deleteClothing(id)
+        
+    }
+    
+    loadData = ()=>{
+
+        var {id} = this.props
+        API.getSingleClothing(id)
+            .then(res=> this.setState({clothingItem:res.data}))
+    }
+
+    componentDidMount(){
+        this.loadData()
+    }
 
     render(){
+
+        var {name,description,price,shippingInfo,photoUrl} = this.state.clothingItem
         return(
             <div className="layer detail">
                 <div className="main-header">
                     <div className="headerback"><Link to="/profile"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                    <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="assets/jacket.jpg" alt="product"/>
+                    <img src="https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E" alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
-                        <Link to ="/edit"><i class="fas fa-edit"></i></Link>
+                        <Link to ={"/edit/"+this.props.id}><i class="fas fa-edit"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
-                        <h3 className="item-detail-title">Customised Jacket Title</h3>
-                        <p className="item-detail-price">$75.00</p>
+                        <h3 className="item-detail-title">{name}</h3>
+                        <p className="item-detail-price">{price.$numberDecimal}</p>
                     </div>
                     <div className="item-detail-subhead-container">
                         <div className="review-star-container">
@@ -52,7 +86,7 @@ class RouteDetail extends Component {
                             Description
                         </p>
                         <p className="item-desc">
-                            Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
+                            {description}
                         </p>
                     </div>
                     <div className="item-ship-container">
@@ -60,7 +94,7 @@ class RouteDetail extends Component {
                             Shipping Info
                         </p>
                         <p className="item-ship">
-                            Shipping to New Zealand only. $15 for country wide express shipping.
+                            {shippingInfo}
                         </p>
                     </div>
                     <div className="item-review-container">
@@ -69,43 +103,7 @@ class RouteDetail extends Component {
                                 Reviews
                             </p>
                         </div>
-                        <div className="item-reviewlist-container">
-                            <div className="review-container">
-                                <div className="review-user-info-container">
-                                    <div className="review-user-dp">
-                                        <img src="/assets/user1.jpeg" alt="user"/>
-                                    </div>
-                                    <div className="review-header">
-                                        <div className="review-user-name">
-                                            Ruel Vincent
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="new-review-rating">
-                                    <p className="new-review-rating-title">
-                                        Rating
-                                    </p>
-                                    <img src="/assets/star.svg" alt="star"/>
-                                    <img src="/assets/star.svg" alt="star"/>
-                                    <img src="/assets/star.svg" alt="star"/>
-                                    <img src="/assets/star.svg" alt="star"/>
-                                    <img src="/assets/star.svg" alt="star"/>
-                                </div>
-                                <div className="review-comment new-review">
-                                    <p className="new-review-rating-title">
-                                        Comments
-                                    </p>
-                                    <textarea name="new_review" id="new_review"></textarea>
-                                </div>
-                                <div className="global-btns">
-                                    <button className="delete-btn">
-                                        Cancel
-                                    </button>
-                                    <button className="save-btn">
-                                        Submit
-                                    </button>
-                                </div>
-                            </div>
+                        
                             {/* <div className="review-container">
                                 <div className="review-user-info-container">
                                     <div className="review-user-dp">
@@ -133,6 +131,10 @@ class RouteDetail extends Component {
                                 </div>
                             </div> */}
 
+                        <div className="edit-btn-container">
+                            <Link to="/profile"><button className="delete-btn" onClick={this.handleDelete}>
+                                Delete Product
+                            </button></Link>
                         </div>
                     </div>
                 </div>

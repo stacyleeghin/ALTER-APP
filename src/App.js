@@ -38,14 +38,14 @@ constructor(props){
           <RouteSignup path="/signup" />
           <RouteBrowse path="/browse" />
           <RouteBrowseDetail path="/browse-detail" />
-          <RouteDetail path="/detail" />
+          <RouteDetail path="/detail/:id" />
           <RouteProfile path="/profile" />
           <RouteOthersProfile path="/othersprofile" />
           <RouteAdd path="/add"/>
           <RouteSetting path="/setting" />
           <RouteCheckout path="/checkout" />
           <RouteFav path="/fav" />
-          <RouteEdit path="/edit" />
+          <RouteEdit path="/edit/:id" />
       
         </Router>
       </div>

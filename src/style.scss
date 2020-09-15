@@ -576,6 +576,9 @@ h6{
         align-items: center;
         .addbtn{
             
+            color: $main-gray-color;
+            
+            display: flex;
             
             
             i{
@@ -985,6 +988,28 @@ h6{
         align-items: flex-start;
         // border: thin solid red;
     }
+    .edit-btn-container{
+
+        padding-top: 2em;
+        display: flex;
+        justify-content: flex-end;
+        button{
+            border: none;
+            outline: none;
+            padding: 1.2em 2em;
+            margin-left: 1em;
+            width: 11em;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 3px 9px 9px 15px;
+        }
+        .delete-btn{
+            color: $main-white-color;
+            background-color: $main-black-color;
+        }
+
+    }
+
+
     .review-star-container{
         flex: 0 0 auto;
         display: flex;
@@ -1038,6 +1063,8 @@ h6{
     }
     .item-desc-container, .item-ship-container{
         padding-bottom:1em;
+
+        width: 100%;
         .item-desc-title, .item-ship-title{
             font-weight: 400;
             padding-bottom: 1em;
@@ -1048,6 +1075,7 @@ h6{
             font-weight: 400;
             line-height: 160%;
             font-size: 0.85em;
+            padding-bottom: 1em;
         }
     }
     .item-review-container{
@@ -1158,8 +1186,14 @@ h6{
     .main-header{
         z-index: 99999;
         background-color: transparent;
+
         .headerback{
-            color: $main-white-color;
+       
+
+            a{
+                color: $main-white-color;
+            }
+            
         }
     }
     .item-detail-img-container{
@@ -1293,6 +1327,8 @@ h6{
     .item-input-container{
         padding-bottom:1em;
         width: 100%;
+        
+        
         .item-input-title{
             font-weight: 400;
             padding-bottom: 1em;
@@ -1303,8 +1339,10 @@ h6{
             font-weight: 400;
             line-height: 160%;
             font-size: 0.85em;
+            width: 100%;
+            
         }
-        .edit-input{
+        .shipping-input, .description-input, .edit-input{
             padding: 1em;
             width: 100%;
             border: thin solid $main-light-color;
@@ -1345,3 +1383,5 @@ h6{
     }
 
 }
+
+

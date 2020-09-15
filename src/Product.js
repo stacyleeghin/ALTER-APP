@@ -4,16 +4,20 @@ import API from './API'
 
 class Product extends Component {
 
+  
+
     render(){
-        var {id,name,description,price,typeId,userId} = this.props
+        var {id,name,description,price,typeId,user,userId,photoUrl} = this.props
 
         return(
             <div className="product">
-                <img src="assets/jacket.jpg" alt="product" className="product-img" />
+                <Link to ={"/detail/"+id}>
+                <img src={photoUrl} alt="product" className="product-img" />
                 <div className="pro-title">
                     <h2>{name}</h2>
-                    <p>John Doe<br /><span className="price">$75.00</span></p>
+                    <p>{user.name}<br/><span className="price">${price.$numberDecimal}</span></p>
                 </div>
+                </Link>
             </div>
 
         )
