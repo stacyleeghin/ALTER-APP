@@ -1,30 +1,51 @@
 import React, {Component} from 'react'
 import { Link } from '@reach/router'
+import API from './API'
 // import RouteCheckout from './checkout'
 // import RouteBrowse from './browse'
 // import RouteFav from './fav'
 // import RouteProfile from './profile'
 
 class RouteDetail extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            clothingItem: {}
+        }
+    }
+
+    loadDetail =() => {
+        var {id} = this.props
+        // API.getSingleClothing(id).then(res => {
+        //     this.setState({clothingItem:res.data})
+        // })
+    }
+    componentDidMount(){
+        this.loadDetail();
+    }
 
 
 
     render(){
+
+        // var {id,name,description,price,typeId,user,shippingInfo} = this.props
+
         return(
             <div className="layer detail">
                 <div className="main-header">
                     <div className="headerback"><Link to="/profile"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                    <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="assets/jacket.jpg" alt="product"/>
+                    <img src="/assets/jacket.jpg" alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
                         <Link to={"/edit/" + this.props.id}><i class="fas fa-edit"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
-                        <h3 className="item-detail-title">Customised Jacket Title</h3>
+                        <h3 className="item-detail-title">heart</h3>
                         <p className="item-detail-price">$75.00</p>
                     </div>
                     <div className="item-detail-subhead-container">

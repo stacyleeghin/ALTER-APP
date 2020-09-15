@@ -9,6 +9,8 @@ import API from './API'
 
 class RouteAdd extends Component {
 
+  
+
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.form);
@@ -21,11 +23,10 @@ class RouteAdd extends Component {
             userId:1
         }
 
-        console.log(data)
+        // console.log(data)
 
         
-        API.addClothing(data)
-        .then(res => navigate('/detail'))
+        API.addClothing(data).then(res => navigate('/profile'))
 
     }
 

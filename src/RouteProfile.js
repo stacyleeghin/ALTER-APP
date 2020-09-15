@@ -3,13 +3,6 @@ import API from './API'
 import {Link} from '@reach/router'
 import Product from './Product'
 
-// import RouteEdit from './edit'
-// import RouteSetting from './setting'
-// import RouteCheckout from './checkout'
-// import RouteBrowse from './browse'
-// import RouteFav from './fav'
-
-
 
 class RouteProfile extends Component {
 
@@ -18,26 +11,7 @@ class RouteProfile extends Component {
         this.state = {
 
             ClothingItems:[
-                // {
-
-                //     id:1,
-                //     name:'Custom Jacket',
-                //     description:'Hand painted demin jacket',
-                //     // photo url:
-                //     price: 79,
-                //     typeId:1,
-                //     userId:1,
-
-                // },{
-
-                //     id:2,
-                //     name:'Custom Pants',
-                //     description:'Hand painted demin jeans',
-                //     // photo url:
-                //     price: 59,
-                //     typeId:2,
-                //     userId:2,
-                // }
+               
             ]
         }
     }
@@ -51,6 +25,8 @@ class RouteProfile extends Component {
     }
 
     render(){
+  
+
         return(
             <div className="layer profile ">
                     <div className="shape angle"></div>
@@ -93,56 +69,6 @@ class RouteProfile extends Component {
                            })
                         }
                     </div>
-
-                        {/* <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                        <div className="product">
-                            <img src="assets/jacket.jpg" alt="product" className="product-img"/>
-                            <div className="pro-title">
-                                <h2>Customized Jacket</h2>
-                                <p>John Doe<br/><span className="price">$75.00</span></p>
-
-                            </div>
-                        </div>
-                    </div> */}
                     <div className="main-footer">
                         <div className="nav home">
                             <Link to="/browse"><i className="fas fa-home"></i></Link>
@@ -156,7 +82,7 @@ class RouteProfile extends Component {
                         <div className="nav profile nav-on">
                             <Link to="/profile"><i className="fas fa-user"></i></Link>
                         </div>
-                </div>
+                    </div>
                 </div>
                 
         )

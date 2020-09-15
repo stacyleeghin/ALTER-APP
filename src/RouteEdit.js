@@ -1,32 +1,33 @@
 import React, {Component} from 'react'
 import { Link, navigate } from '@reach/router'
 import API from './API';
-// import RouteCheckout from './checkout'
-// import RouteBrowse from './browse'
-// import RouteFav from './fav'
-// import RouteProfile from './profile'
 
 
 class RouteEdit extends Component {
 
     constructor(props){
         super(props)
+
         this.state = {
-
-            product:{
-            
-            }
-
+            clothingItem: {
+			
+			}
         }
     }
 
-    componentDidMount(){
-        var{id} = this.props;
-        console.log(id)
+    loadDetail =() => {
+		var{id} = this.props;
+        // console.log(id)
         API.getSingleClothing(id).then(res =>{
-            this.setState({product:res.data})
+			console.log(res.data)
+            this.setState({clothingItem:res.data})
         })
     }
+    componentDidMount(){
+        this.loadDetail();
+    }
+
+
 
     handleFormSubmit = (e) => {
         e.preventDefault()
@@ -37,16 +38,24 @@ class RouteEdit extends Component {
             price:formData.get('price'),
             description:formData.get('description'),
             shipping:formData.get('shipping')
-        }
-
-        API.updateClothing(data).then(res => navigate('/detail/'))
+		}
+		var{id} = this.props;
+		console.log(data)
+        API.updateClothing(id,data).then(res => navigate('/profile'))
     }
-
+	handleDeleteClick = () => {
+		var{id} = this.props
+		API.deleteClothing(id).then(res => navigate('/profile'))
+		
+	
+	}
 
 
     render(){
-        var {name,price,description,shipping} = this.state.product
-        return(
+
+
+        var {name,price,description,shipping} = this.state.clothingItem
+        return name ? (
 
             <div className="layer edit ">
                 <div className="main-header">
@@ -60,8 +69,8 @@ class RouteEdit extends Component {
                     <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
                     	
                     	<div className="item-detail-header-container">
-                    	    <h3 className="item-detail-title">New Item</h3>
-                    	    <p className="item-detail-price">\$00.00</p>
+							<h3 className="item-detail-title">{name}</h3>
+							<p className="item-detail-price">${price.$numberDecimal}</p>
 
                     	</div>
                     	<div className="item-detail-subhead-container">
@@ -95,7 +104,7 @@ class RouteEdit extends Component {
                     	    <p className="item-desc hide">
                     	        Denim jacket finished with distressed detailing.Point collar. Long sleeves. Buttoned barrel cuffs. Button front.About 23" from shoulder to hem. Cotton. Machine wash.
                     	    </p>
-                    	    <input type="text" name="price" id="price-input" className="edit-input" placeholder="70.00" defaultValue={price}/>
+                    	    <input type="text" name="price" id="price-input" className="edit-input" placeholder="70.00" defaultValue={price.$numberDecimal}/>
                     	</div>
                     	<div className="item-input-container">
                     	    <p className="item-input-title">
@@ -119,12 +128,12 @@ class RouteEdit extends Component {
                     	</div>
                                  
                     	<div className="edit-btn-container">
-                    	    <Link to="/profile"><button className="delete-btn">
+                    	    <button onClick={this.handleDeleteClick} className="delete-btn">
                     	        Delete Product
-                    	    </button></Link>
-                    	    <Link to="/profile"> <button className="save-btn">
+                    	    </button>
+                    	   <button className="save-btn">
                     	        Save
-                    	    </button></Link>
+                    	    </button>
                     	</div>
                     </form>
                 </div>
@@ -145,7 +154,7 @@ class RouteEdit extends Component {
                 </div>
             </div>
 
-        )
+        ):null
     }
 }
 
