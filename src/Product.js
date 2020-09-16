@@ -12,7 +12,7 @@ class Product extends Component {
         return(
             <div className="product">
                 <Link to ={"/detail/"+id}>
-                <img src={photoUrl} alt="product" className="product-img" />
+                <img src={API.serverUrl+photoUrl} alt="product" className="product-img" />
                 <div className="pro-title">
                     <h2>{name}</h2>
                     <p>{user.name}<br/><span className="price">${price.$numberDecimal}</span></p>

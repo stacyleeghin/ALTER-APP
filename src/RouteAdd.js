@@ -11,17 +11,28 @@ class RouteAdd extends Component {
     handleFormSubmit = (e) => {
         e.preventDefault()
         var formData = new FormData(this.form);
+        
+        API.uploadFile(formData)
+        .then(res => res.data)
 
-        var data = {
-            photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
-            name:formData.get('name-input'),
-            description:formData.get('description-input'),
-            price:formData.get('price-input'),
-            shippingInfo:formData.get('shipping-input'),
-            userId:1,
-            typeId:1
-        }
-        API.addClothing(data).then(res=>navigate('profile'))
+        .then(fileName =>{
+            // var {currentUser} = this.props;
+            console.log(fileName)
+
+
+            var data = {
+                photoUrl:fileName,
+                name:formData.get('name-input'),
+                description:formData.get('description-input'),
+                price:formData.get('price-input'),
+                shippingInfo:formData.get('shipping-input'),
+                userId:1,
+                typeId:1
+            }
+            API.addClothing(data).then(res=>navigate('profile'))
+        })
+
+        
     }
 
 
@@ -44,7 +55,7 @@ class RouteAdd extends Component {
                             <label htmlFor="upload_file" className="custom-file-upload">
                                 <i className="fas fa-camera-retro"></i>
                             </label>
-                            <input type="file" name="upload_file" id="upload_file"/>
+                            <input type="file" name="photo" id="upload_file"/>
                             
                         </div>
                         <div className="form-group">

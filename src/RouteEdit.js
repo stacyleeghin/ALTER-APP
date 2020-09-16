@@ -17,7 +17,7 @@ class RouteEdit extends Component {
                 name:'',
                 price:'',
                 shippingInfo:'',
-                photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+                photoUrl:'',
                 userId:'',
                 typeId:''
             }
@@ -34,7 +34,7 @@ class RouteEdit extends Component {
         e.preventDefault()
         var formData = new FormData(this.form)
         var data = {
-            photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+            // photoUrl:'',
             name:formData.get('name-input'),
             description:formData.get('description-input'),
             price:formData.get('price-input'),
@@ -56,10 +56,10 @@ class RouteEdit extends Component {
             <div className="layer edit ">
                 <div className="main-header">
                 <div className="headerback"><Link to={"/detail/" + this.props.id}><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="" alt="logoimg" className="headerlogo"/>
+                    <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src={photoUrl} alt="product"/>
+                    <img src={API.serverUrl+photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     
@@ -76,6 +76,7 @@ class RouteEdit extends Component {
                         </div>
                     </div>
                     <form onSubmit={this.handleFormSubmit} ref={(el)=>{this.form = el}}>
+                        
                     <div className="item-input-container">
                         <p className="item-input-title">
                             Name
@@ -109,7 +110,7 @@ class RouteEdit extends Component {
                     </div>
                     <div className="edit-btn-container">
                         <button className="delete-btn">
-                            cancle
+                            cancel
                         </button>
                         <button className="save-btn">
                             Save

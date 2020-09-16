@@ -16,7 +16,7 @@ class RouteDetail extends Component {
                 name:'',
                 price:'',
                 shippingInfo:'',
-                photoUrl:'https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E',
+                photoUrl:'',
                 userId:'',
                 typeId:''
 
@@ -51,11 +51,11 @@ class RouteDetail extends Component {
                     <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="https://lh3.googleusercontent.com/tlEcljHF9LbvEaQzWEV_v7L6-VVsbAQSMGeKSl3rMQxHYk6r1_zMA1T0r-fQCUz-EKm74gwUxZeW6HPhkoD349t8B9o7OQhRf5b-dTIJzm7hHminidT8KnRedh76Pwr8d-WS5iA-=w2400?source=screenshot.guru%22%3E" alt="product"/>
+                    <img src={API.serverUrl+photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
-                        <Link to ={"/edit/"+this.props.id}><i class="fas fa-edit"></i></Link>
+                        <Link to ={"/edit/"+this.props.id}><i className="fas fa-edit"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
                         <h3 className="item-detail-title">{name}</h3>
