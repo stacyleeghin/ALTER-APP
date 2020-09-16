@@ -60,10 +60,10 @@ class RouteEdit extends Component {
             <div className="layer edit ">
                 <div className="main-header">
                 <div className="headerback"><Link to={"/detail/"+this.props.id}><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></Link></div>
-                    <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
+                    <img src="/assets/logo-white.png" alt="" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="assets/jacket.jpg" alt="product"/>
+                    <img src="/assets/jacket.jpg" alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
