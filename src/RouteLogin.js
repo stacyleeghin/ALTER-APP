@@ -53,7 +53,7 @@ class RouteLogin extends Component {
             </div>
             <img src="assets/jacket.png" alt="loginimg" className="loginimg"/>
             <div className="signin-container">
-                <h1>Log In  <span className="icons"><i className="fas fa-chevron-right"></i><i className="fas fa-chevron-right"></i></span></h1>
+                {/* <h1>Log In  <span className="icons"><i className="fas fa-chevron-right"></i><i className="fas fa-chevron-right"></i></span></h1> */}
 
                 <form id="loginform" onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
 

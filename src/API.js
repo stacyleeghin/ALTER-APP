@@ -35,6 +35,10 @@ var API = {
     },
     authenticate : (data) => {
         return axios.post(urlPrefix+'/users/authenticate',data)
+    },
+    uploadFile : (formData) => {
+        var settings = { headers: {'Content-Type': 'multipart/form-data'}}
+        return axios.post(urlPrefix+'/upload',formData, settings)
     }
 
 }

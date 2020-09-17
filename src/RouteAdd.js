@@ -15,18 +15,29 @@ class RouteAdd extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
 
-        var data = {
-            name:formData.get('product'),
-            price:formData.get('exampleInputPrice'),
-            description:formData.get('description'),
-            shipping:formData.get('shipping'),
-            userId:1
-        }
+        API.uploadFile(formData)
+        .then(res => res.data)
 
-        // console.log(data)
+        .then(fileName => {
 
-        
-        API.addClothing(data).then(res => navigate('/profile'))
+            var data = {
+                photoUrl:fileName,
+                name:formData.get('product'),
+                price:formData.get('exampleInputPrice'),
+                description:formData.get('description'),
+                shipping:formData.get('shipping'),
+                userId:1,
+                typeId:1
+            }
+    
+            // console.log(data)
+    
+            
+            API.addClothing(data).then(res => navigate('/profile'))
+
+        })
+
+     
 
     }
 

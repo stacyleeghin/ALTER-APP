@@ -31,7 +31,7 @@ class RouteProfile extends Component {
             <div className="layer profile ">
                     <div className="shape angle"></div>
                     <div className="main-header">
-                        <div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div>
+                        <Link to= "/"><div className="headerback"><i className="fas fa-chevron-left"></i><i className="fas fa-chevron-left"></i></div></Link>
                         <img src="assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                         <i className="fas fa-cog"></i>
                     </div>

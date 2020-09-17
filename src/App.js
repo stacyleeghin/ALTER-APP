@@ -22,9 +22,26 @@ import RouteBrowseDetail from './RouteBrowseDetail';
 
 class App extends Component{
 
-constructor(props){
-  super(props)
+  constructor(props){
+    super(props)
+    this.state = {
+      currentUser: null
+    }
 
+  }
+
+  setCurrentUser = (user) => {
+    this.setState({currentUser:user})
+  }
+
+  componentDidMount(){
+
+
+    //local storage
+    var userId = localStorage.getItem('userId')
+    if(userId){
+      API.getSingleUser(userId).then(res => this.setState({currentUser:res.data}))
+    }
   }
 
   render (){
@@ -34,7 +51,7 @@ constructor(props){
         
         <Router>
           <RouteHome path="/" />
-          <RouteLogin path="/login" />
+          <RouteLogin setCurrentUser={this.setCurrentUser} path="/login" />
           <RouteSignup path="/signup" />
           <RouteBrowse path="/browse" />
           <RouteBrowseDetail path="/browse-detail" />
