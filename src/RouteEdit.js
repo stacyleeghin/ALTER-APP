@@ -54,7 +54,7 @@ class RouteEdit extends Component {
     render(){
 
 
-        var {name,price,description,shipping} = this.state.clothingItem
+		var {name,price,description,shipping,photoUrl} = this.state.clothingItem
         return name ? (
 
             <div className="layer edit ">
@@ -63,7 +63,7 @@ class RouteEdit extends Component {
                     <img src="/assets/logo-white.png" alt="" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="/assets/jacket.jpg" alt="product"/>
+                    <img src={API.serverUrl+photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <form onSubmit={this.handleFormSubmit} ref={(el) => {this.form = el}}>
