@@ -17,9 +17,9 @@ class RouteDetail extends Component {
 
     loadDetail =() => {
         var {id} = this.props
-        // API.getSingleClothing(id).then(res => {
-        //     this.setState({clothingItem:res.data})
-        // })
+        API.getSingleClothing(id).then(res => {
+            this.setState({clothingItem:res.data})
+        })
     }
     componentDidMount(){
         this.loadDetail();
@@ -29,7 +29,7 @@ class RouteDetail extends Component {
 
     render(){
 
-        // var {id,name,description,price,typeId,user,shippingInfo} = this.props
+        var {id,name,description,price,typeId,user,shippingInfo,photoUrl} = this.state.clothingItem
 
         return(
             <div className="layer detail">
@@ -38,7 +38,7 @@ class RouteDetail extends Component {
                     <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src="/assets/jacket.jpg" alt="product"/>
+                    <img src={API.serverUrl+photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
