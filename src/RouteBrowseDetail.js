@@ -7,8 +7,6 @@ import { Link } from '@reach/router'
 
 class RouteBrowseDetail extends Component {
 
-
-
     render(){
         return(
             <div className="layer detail">
@@ -21,7 +19,7 @@ class RouteBrowseDetail extends Component {
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
-                        <Link to ="/checkout"><i class="fas fa-cart-plus"></i></Link>
+                        <Link to ="/checkout"><i className="fas fa-cart-plus"></i></Link>
                     </button>
                     <div className="item-detail-header-container">
                         <h3 className="item-detail-title">Customised Jacket Title</h3>

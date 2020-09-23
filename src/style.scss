@@ -15,7 +15,7 @@ $main-green-color: #37884e;
             display: block;
             width: 80%;
             margin: auto;
-            padding: 1.3em;
+            padding: 1.5em 1.3em;
             text-align: center;
             letter-spacing: 5px;
             color: $main-black-color;
@@ -48,12 +48,13 @@ $main-green-color: #37884e;
 }
 body{
     font-family: 'Lato', sans-serif;
+    background-color: grey;
 }
 .app{
-    position: relative;
+    margin: 0 auto;
     max-width: 400px;
     max-height: 850px;
-
+    // overflow-y: hidden;
 }
 .active{
     display: block !important;
@@ -61,6 +62,9 @@ body{
 .layer{
     // display: none;
     min-height: 100vh;
+    background-color: $main-white-color;
+    position: relative;
+    padding-bottom:1em;
 }
 h1{
     font-size:1.5em;
@@ -159,7 +163,9 @@ h6{
     position: fixed;
     top: 0;
     background: $main-white-color;
-    padding: 0.5em;
+    padding: 1em 0.5em;
+    max-width: 400px;
+    width: inherit;
 
     .headerlogo{
         margin-left: auto;
@@ -169,8 +175,8 @@ h6{
     }
     .headerback{
         font-size: 1.5em;
-        top: 0.5em;
-       left: 0.5em;
+        top: 0.8em;
+        left: 0.5em;
         position: absolute;
         a{
             color:$main-black-color;    
@@ -205,6 +211,14 @@ h6{
     }
 }
 
+//Error message
+.error-msg{
+    color: red;
+    margin: 0 auto;
+    padding-top: 1em;
+    text-align: center;
+}
+
 //home page -------------------------------
 .home{
     background:linear-gradient(160deg, $main-white-color, $main-white-color 50%, $main-black-color 50%, $main-black-color);
@@ -234,6 +248,9 @@ h6{
         
     }
     .buttons{
+        button{
+            border: none;
+        }
         .signup-btn{
             @include btns;
             background: $main-white-color;
@@ -353,7 +370,7 @@ h6{
             margin-top: 1em;
             input{
                 border: none;
-                color: $main-light-color;
+                color: $main-black-color;
                 border-bottom: thin $main-light-color solid;
                 background: transparent;
                 padding: 2.5em 1em 1em 0em;
@@ -361,6 +378,9 @@ h6{
                 width: 100%;
                 &:focus{
                     outline: none !important;
+                }
+                &::placeholder{
+                    color: $main-light-color;
                 }
             }
             button{
@@ -384,6 +404,7 @@ h6{
 }
 //browse page-------------------------------------
 .browse{
+    padding-top: 1em;
     .browse-header{
         display: flex;
         margin: 1.5em;
@@ -408,8 +429,7 @@ h6{
             width: 30%;    
         }
     }
-  
-  
+
     .category{
         .category-box{
             text-align:center;

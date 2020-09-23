@@ -8,7 +8,6 @@ class RouteProfile extends Component {
     constructor(props){
         super(props)
         this.state = {
-
             ClothingItems:[
                 // {
 
@@ -49,6 +48,9 @@ class RouteProfile extends Component {
         })
     }
     componentDidMount(){
+        var localId = localStorage.getItem('userId')
+        console.log(localId)
+        
         this.loadProfile();
     }
 
