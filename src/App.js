@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Router, Link, navigate} from '@reach/router'
+// import { Router, Link, navigate} from '@reach/router'
+import { Router} from '@reach/router'
 
 import RouteHome from './RouteHome.js';
 import RouteDetail from './RouteDetail.js';

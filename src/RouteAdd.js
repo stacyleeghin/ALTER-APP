@@ -13,18 +13,22 @@ class RouteAdd extends Component {
         e.preventDefault()
         var formData = new FormData(this.form);
 
-        var data = {
-            name:formData.get('product'),
-            // placeholder photourl before image uploader completed
-            photoUrl:'https://lh3.googleusercontent.com/DEkMFpkyPAiO8JKmx0D-fttmQXWMRAi72qnZHOb2WvcmyIxwajfdkKy6qJt3y7Y9I5GyeW7gUR4Yr67qIgTZ1bXyNiKaoJlUKen0OV9g91mii59R5Y12BngghHPravSxNCeYgZeu=w2400',
-            description:formData.get('description'),
-            shippingInfo:formData.get('shipping'),
-            price:formData.get('inputPrice'),
-            userId:1,
-            typeId:2
-        }
+        API.uploadFile(formData)
+        .then(res => res.data)
 
-        API.addClothing(data).then(res => navigate('/profile'))
+        .then(photoUrl => {
+            var currentUser = localStorage.getItem('userId')
+            var data = {
+                name:formData.get('product'),
+                photoUrl:photoUrl,
+                description:formData.get('description'),
+                shippingInfo:formData.get('shipping'),
+                price:formData.get('inputPrice'),
+                userId:currentUser,
+                typeId:2
+            }
+            API.addClothing(data).then(res => navigate('/profile'))
+        })
     }
 
     render(){
@@ -38,14 +42,13 @@ class RouteAdd extends Component {
                     <div className="subtitle">
                         <h1>Add New Listing</h1>
                     </div>
-            
                     <form onSubmit={this.submitForm} ref={(el) => {this.form = el}}>
                         <div className="productimage">
                             <h3>Product Image</h3>
                             <label htmlFor="upload_file" className="custom-file-upload">
                                 <i className="fas fa-camera-retro"></i>
                             </label>
-                            <input type="file" name="upload_file" id="upload_file"/>
+                            <input type="file" name="upload_file" id="upload_file" required/>
                             
                         </div>
                         <div className="form-group">

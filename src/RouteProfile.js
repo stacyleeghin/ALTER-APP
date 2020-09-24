@@ -38,20 +38,30 @@ class RouteProfile extends Component {
                 //     typeId:2,
                 //     userId:2,
                 // }
+            ],
+            currentUser:[
+
             ]
         }
     }
 
     loadProfile = () => {
+        var localId = localStorage.getItem('userId')
+        console.log(localId)
+        API.getSingleUser(localId).then(res=>{
+            this.setState({currentUser:res.data})
+        })
+    }
+
+    loadProfileClothing = () => {
         API.getClothing().then(res => {
         this.setState({ClothingItems:res.data})
         })
     }
+    
     componentDidMount(){
-        var localId = localStorage.getItem('userId')
-        console.log(localId)
-        
         this.loadProfile();
+        this.loadProfileClothing();
     }
 
     render(){
@@ -66,15 +76,14 @@ class RouteProfile extends Component {
                     <div className="profilehead">
                         <img src="/assets/profile.jpeg" alt="profileimg" className="profileimg"/>
                         <div className="profiledp">
-                            <h3>John Doe<span className="profile-edit"><i className="fas fa-pen"></i></span></h3>
-                            <p><i className="fas fa-map-marker-alt"></i> Toronto,Canada</p> 
-                            <p><i className="fas fa-envelope"></i>JohnDoe@gmail.com</p>
+                            <h3>{this.state.currentUser.name}<span className="profile-edit"><i className="fas fa-pen"></i></span></h3>
+                            <p><i className="fas fa-map-marker-alt"></i>Auckland, New Zealand</p> 
+                            <p><i className="fas fa-envelope"></i>{this.state.currentUser.email}</p>
                         </div>
                     </div>
                     <div className="bio">
                         <h1>Bio</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste vero explicabo libero obcaecati asperiores soluta enim blanditiis similique, quidem maiores.</p>
-                        
+                        <p>I make hand painted clothing for all occasions. Shirts, jackets, pants and tops all custom one off designs.</p>
                     </div>
                     <div className="addproduct">
                         <h1>My Products</h1>
@@ -89,7 +98,7 @@ class RouteProfile extends Component {
                                 var productProps = {
                                     ...product,
                                     key: product.id,
-                                    loadProfile:this.loadProfile
+                                    loadProfileClothing:this.loadProfileClothing
                                 };
                                 return (<Product {...productProps} />)
                             })

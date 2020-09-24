@@ -9,6 +9,9 @@ var API = {
     getClothing : () => {
         return axios.get(urlPrefix+'/clothingItems')
     },
+    // getUserClothing : (id) => {
+    //     return axios.get(urlPrefix+'/clothingItems/'+id)
+    // },
     getSingleClothing : (id) => {
         return axios.get(urlPrefix+'/clothingItems/'+id)
     },

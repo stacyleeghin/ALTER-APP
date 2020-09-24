@@ -16,10 +16,11 @@
 
 body {
   font-family: 'Lato', sans-serif;
+  background-color: grey;
 }
 
 .app {
-  position: relative;
+  margin: 0 auto;
   max-width: 400px;
   max-height: 850px;
 }
@@ -30,6 +31,9 @@ body {
 
 .layer {
   min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  padding-bottom: 1em;
 }
 
 h1 {
@@ -100,6 +104,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   height: 4.5em;
+  background-color: #ffffff;
   width: 100%;
 }
 
@@ -145,7 +150,9 @@ h6 {
   position: fixed;
   top: 0;
   background: #ffffff;
-  padding: 0.5em;
+  padding: 1em 0.5em;
+  max-width: 400px;
+  width: inherit;
 }
 
 .main-header .headerlogo {
@@ -157,7 +164,7 @@ h6 {
 
 .main-header .headerback {
   font-size: 1.5em;
-  top: 0.5em;
+  top: 0.8em;
   left: 0.5em;
   position: absolute;
 }
@@ -199,6 +206,13 @@ h6 {
   background-color: #1c1c1c;
 }
 
+.error-msg {
+  color: red;
+  margin: 0 auto;
+  padding-top: 1em;
+  text-align: center;
+}
+
 .home {
   background: linear-gradient(160deg, #ffffff, #ffffff 50%, #1c1c1c 50%, #1c1c1c);
 }
@@ -224,11 +238,15 @@ h6 {
   width: 90%;
 }
 
+.home .buttons button {
+  border: none;
+}
+
 .home .buttons .signup-btn {
   display: block;
   width: 80%;
   margin: auto;
-  padding: 1.3em;
+  padding: 1.5em 1.3em;
   text-align: center;
   letter-spacing: 5px;
   color: #1c1c1c;
@@ -241,7 +259,7 @@ h6 {
   display: block;
   width: 80%;
   margin: auto;
-  padding: 1.3em;
+  padding: 1.5em 1.3em;
   text-align: center;
   letter-spacing: 5px;
   color: #1c1c1c;
@@ -311,7 +329,7 @@ h6 {
   display: block;
   width: 80%;
   margin: auto;
-  padding: 1.3em;
+  padding: 1.5em 1.3em;
   text-align: center;
   letter-spacing: 5px;
   color: #1c1c1c;
@@ -372,7 +390,7 @@ h6 {
 
 .signup .signin-container form input {
   border: none;
-  color: #a8a8a8;
+  color: #1c1c1c;
   border-bottom: thin #a8a8a8 solid;
   background: transparent;
   padding: 2.5em 1em 1em 0em;
@@ -384,11 +402,27 @@ h6 {
   outline: none !important;
 }
 
+.signup .signin-container form input::-webkit-input-placeholder {
+  color: #a8a8a8;
+}
+
+.signup .signin-container form input:-ms-input-placeholder {
+  color: #a8a8a8;
+}
+
+.signup .signin-container form input::-ms-input-placeholder {
+  color: #a8a8a8;
+}
+
+.signup .signin-container form input::placeholder {
+  color: #a8a8a8;
+}
+
 .signup .signin-container form button {
   display: block;
   width: 80%;
   margin: auto;
-  padding: 1.3em;
+  padding: 1.5em 1.3em;
   text-align: center;
   letter-spacing: 5px;
   color: #1c1c1c;
@@ -406,6 +440,10 @@ h6 {
 
 .signup .signin-container form button:focus {
   outline: none !important;
+}
+
+.browse {
+  padding-top: 1em;
 }
 
 .browse .browse-header {
@@ -588,8 +626,9 @@ h6 {
 }
 
 .profile .profilehead .profiledp h3 .profile-edit {
-  padding: 1em;
   font-size: 0.9em;
+  margin-left: 0.5em;
+  margin-right: 0;
 }
 
 .profile .profilehead .profiledp p {
@@ -597,7 +636,7 @@ h6 {
   line-height: 2em;
 }
 
-.profile .profilehead .profiledp p i {
+.profile .profilehead .profiledp i {
   margin-right: 0.5em;
 }
 
@@ -890,6 +929,7 @@ h6 {
 }
 
 .add .main-add {
+  min-height: 100vh;
   padding: 1em 2em;
   margin-top: 3em;
 }

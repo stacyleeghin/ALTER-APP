@@ -5,7 +5,7 @@ import { Link } from '@reach/router'
 // import RouteFav from './fav'
 // import RouteProfile from './profile'
 
-import API from './API'
+// import API from './API'
 
 
 class RouteBrowse extends Component {

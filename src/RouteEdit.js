@@ -32,7 +32,7 @@ class RouteEdit extends Component {
         var data = {
             name:formData.get('name'),
             // placeholder photourl before image uploader completed
-            photoUrl:'https://lh3.googleusercontent.com/DEkMFpkyPAiO8JKmx0D-fttmQXWMRAi72qnZHOb2WvcmyIxwajfdkKy6qJt3y7Y9I5GyeW7gUR4Yr67qIgTZ1bXyNiKaoJlUKen0OV9g91mii59R5Y12BngghHPravSxNCeYgZeu=w2400',
+            photoUrl:'',
             description:formData.get('description'),
             shippingInfo:formData.get('shipping'),
             price:formData.get('price'),
@@ -55,7 +55,7 @@ class RouteEdit extends Component {
                     <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src={productEdit.photoUrl} alt="product"/>
+                    <img src={API.serverUrl+productEdit.photoUrl} alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     

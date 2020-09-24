@@ -28,7 +28,7 @@ class RouteDetail extends Component {
                     <img src="/assets/logo-white.png" alt="logoimg" className="headerlogo"/>
                 </div>
                 <div className="item-detail-img-container">
-                    <img src={productDetail.photoUrl}alt="product"/>
+                    <img src={API.serverUrl+productDetail.photoUrl}alt="product"/>
                 </div>
                 <div className="item-detail-content-wrap">
                     <button className="addtocart-btn">
